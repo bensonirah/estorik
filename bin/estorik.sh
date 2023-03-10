@@ -2,14 +2,16 @@
 set -e
 
 if [ $# -lt 2 ];then
-    figlet "estorik"
-    echo "Show help here"
+    showHelp
 else
 
 base_cmd=$1
 sub_cmd=$2
 
-
+function showHelp {
+    figlet "estorik"
+    echo "Usage:  estorik [OPTIONS] COMMAND"
+}
 
 function errorHandler {
     echo "An error occured!"
@@ -17,7 +19,7 @@ function errorHandler {
 
 # Check if a project is a estorik project
 if [ ! -e $(pwd)/estorik.yaml ] && [ ! -e $(pwd)/composer.json ];then
-    figlet "estorik"
+    showHelp
     echo "This is not a estorik project!"
     exit 1;
 fi

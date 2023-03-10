@@ -2,5 +2,5 @@
 
 
 function env::ls {
-    echo "Run env::ls command!"
+    find . -type f -iname '.env*' | sed 's/^.\///g' | sort
 }
