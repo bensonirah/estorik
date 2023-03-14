@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -f # Disable wildcard expansion in bash
+#set -f # Disable wildcard expansion in bash
 
 function db::query {
     shift 2
